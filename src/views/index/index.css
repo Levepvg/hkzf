@@ -1,0 +1,12 @@
+.menu .am-flexbox {
+  text-align: center;
+  padding-top: 10px;
+}
+.menu .am-flexbox img {
+  height: 48px;
+}
+.menu .am-flexbox p {
+  margin-top: 7px;
+  font-size: 13px;
+}
+

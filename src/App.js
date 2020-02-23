@@ -1,24 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+// import { Button } from 'antd-mobile';
 import './App.css';
+import { Route, BrowserRouter as Router , Switch , Redirect} from 'react-router-dom';
+import Home from './views/layout/index.js'
+import CityList from './views/city/index'
+import TestMap from './views/map/index'
+
+function Login(){
+  return(
+    <div>
+      登录
+    </div>
+  )
+}
+
+function NotFounld () {
+  return (
+    <div>
+      页面不见鸟
+    </div>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={ {height: "100%" }}>
+      <Router>
+        <Switch>
+           <Redirect exact from="/" to='/login' />
+           <Route path='/login' component={Login} />
+           <Route path="/home" component={Home} />
+           <Route path="/map" component={TestMap} />
+           <Route path="/citylist" component={CityList} />
+           <Route component={NotFounld} />
+        </Switch>
+      </Router>
     </div>
   );
 }

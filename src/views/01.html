@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   let list = [{
+    label: '北京',
+    short: 'bj'
+  }, {
+    label: '北海',
+    short: 'bh'
+  }, {
+    label: '长沙',
+    short: 'cs'
+  }, {
+    label: '长春',
+    short: 'cc'
+  }, {
+    label: '重庆',
+    short: 'cq'
+  }, {
+    label: '安庆',
+    short: 'aq'
+  }, {
+    label: '安阳',
+    short: 'ay'
+  }]
+    function formatDate(list) {
+        let result =[]
+        // 实现转换操作
+        list.forEach( item=> {
+            // 获取城市的首字母
+            let firstLetter = item.short.substr(0,1);
+            // 判断 对象中是否有包含某个属性
+            if(result.hasOwnProperty(firstLetter)){
+                // 如果已经存在该属性 
+                result[firstLetter].push(item)
+            }  else {
+                result[firstLetter]= [item]
+            }
+        })
+        console.log(result);
+        
+        return result;
+    }  
+      let ret =  formatDate(list);
+        let sortResult = Object.keys(ret).sort(
+        )
+        console.log(sortResult );
+        
+        
+    </script>
+
+</body>
+</html>
